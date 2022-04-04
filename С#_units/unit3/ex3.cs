@@ -4,36 +4,25 @@ class Program
 {
     public static void Main()
     {
-        string digit;
-
-        Console.WriteLine("Введите номер недели");
-        digit = Console.ReadLine();
-        switch (digit)
+        int m = Max_params(1, 2, 10, 54, 67);
+        Console.WriteLine(m);
+    }
+    public static int Max(int first, int second)
+    {
+        if (first > second) {return (first);}
+        return (second);
+    }
+    public static int Max_params(params int[] numbers)
+    {
+        int max;
+        max = 0; // условно есть минимальное значение для int
+        foreach (int n in numbers)
         {
-            case "1":
-                Console.WriteLine("Понедельник");
-                break;
-            case "2":
-                Console.WriteLine("Вторник");
-                break;
-            case "3":
-                Console.WriteLine("Среда");
-                break;
-            case "4":
-                Console.WriteLine("Четверг");
-                break;
-            case "5":
-                Console.WriteLine("Пятница");
-                break;
-            case "6":
-                Console.WriteLine("Суббота");
-                break;
-            case "7":
-                Console.WriteLine("Воскресенье");
-                break;
-            default:
-                Console.WriteLine("Неправильное число");
-                break;
+            if (max < n)
+            {
+                max = n;
+            }
         }
+        return (max);
     }
 }
